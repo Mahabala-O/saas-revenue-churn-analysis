@@ -4,6 +4,8 @@
 **Context:** Board meeting preparation for a B2B SaaS company  
 **Tools:** Python (Pandas, SciPy, Scikit-learn), Tableau, Notion
 
+📓 **Full documentation & findings:** [Notion Doc](https://mahabala.notion.site/SaaS-Revenue-Churn-Analysis-33de583fcafd8009a6d8e67e02d43719)
+
 ---
 
 ## 📋 Project Overview
@@ -20,19 +22,22 @@ saas-revenue-churn-analysis/
 ├── data/
 │   ├── subscriptions.csv              # Raw customer-level dataset
 │   ├── monthly_revenue.csv            # Raw monthly MRR dataset
-│   ├── subscriptions_enriched.csv     # Enriched with tenure, risk score columns
+│   ├── subscriptions_enriched.csv     # Enriched with tenure and risk score columns
 │   └── mrr_trends_enriched.csv        # Enriched with NRR and churned loss columns
 │
 ├── notebooks/
-│   └── saas_churn_analysis.ipynb     # Full analysis notebook
+│   ├── tabl_SaaS_Revenue-Churn_Analysis.ipynb   # Full analysis notebook (primary)
+│   └── SaaS_Revenue-Churn_Analysis.ipynb        # Earlier draft
 │
 ├── tableau/
-│   ├── cloudtask_pro_dashboard.twbx  # Interactive Tableau Story (4 dashboards)
-│   └── cloudtask_pro_dashboard.pdf   # Static PDF export
+│   ├── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.twb   # Tableau workbook
+│   └── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.pdf   # Static PDF export
 │
 ├── README.md
 └── requirements.txt
 ```
+
+> **Note:** The Tableau file is a `.twb` (workbook) rather than `.twbx` (packaged workbook), meaning it references the CSV files externally. To open it correctly in Tableau Desktop, ensure the data files in the `data/` folder are accessible.
 
 ---
 
@@ -73,10 +78,10 @@ All plans clear the 3x benchmark. CAC used as blended average ($200.79) — plan
 
 Four dashboards combined into a Tableau Story:
 
-1. **MRR Growth & Churn Trends** — KPI cards, MRR trend + regression, monthly churn trend, churn by plan
-2. **Customer Segment Risk Analysis** — Churn by region, billing cycle, industry, churn reasons by plan
+1. **MRR Growth & Churn Trends** — KPI cards, MRR trend + regression overlay, monthly churn rate trend, churn rate by plan
+2. **Customer Segment Risk Analysis** — Churn by region, billing cycle, industry, churn reasons stacked bar by plan
 3. **Customer Lifetime Value & Profitability** — CLV:CAC ratio, CLV by plan, avg tenure by plan
-4. **At-Risk Customer Indicators** — Feature usage vs NPS scatter, risk score box plot, at-risk by plan
+4. **At-Risk Customer Indicators** — Feature usage vs NPS scatter plot, risk score box plot, at-risk customers by plan
 
 ---
 
@@ -84,7 +89,7 @@ Four dashboards combined into a Tableau Story:
 
 - **Python** — Pandas, NumPy, Matplotlib, SciPy, Scikit-learn
 - **Tableau Desktop** — Interactive dashboards and Tableau Story
-- **Notion** — Project documentation and findings log
+- **Notion** — Project documentation and findings: [View Doc](https://mahabala.notion.site/SaaS-Revenue-Churn-Analysis-33de583fcafd8009a6d8e67e02d43719)
 
 ---
 
@@ -92,9 +97,10 @@ Four dashboards combined into a Tableau Story:
 
 1. Clone the repository
 2. Install dependencies: `pip install -r requirements.txt`
-3. Open `notebooks/saas_churn_analysis.ipynb` in Jupyter
+3. Open `notebooks/tabl_SaaS_Revenue-Churn_Analysis.ipynb` in Jupyter
 4. Run all cells in order
-5. Open `tableau/cloudtask_pro_dashboard.twbx` in Tableau Desktop to view dashboards
+5. Open `tableau/CloudTask Pro - Board Analysis - Revenue, Churn & Risk.twb` in Tableau Desktop
+   - Ensure the `data/` folder CSVs are accessible when Tableau prompts for data source location
 
 ---
 

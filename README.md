@@ -2,15 +2,15 @@
 
 **Role:** Business Analyst  
 **Context:** Board meeting preparation for a B2B SaaS company  
-**Tools:** Python (Pandas, SciPy, Scikit-learn), Tableau, Notion
+**Tools:** Python (Pandas, SciPy, Scikit-learn), Tableau
 
-📓 **Full documentation & findings:** [Notion Doc](https://mahabala.notion.site/SaaS-Revenue-Churn-Analysis-33de583fcafd8009a6d8e67e02d43719)
+📖 **Full write-up with interactive charts:** [portfolio-mo.vercel.app/projects/saas-revenue-churn-analysis](https://portfolio-mo.vercel.app/projects/saas-revenue-churn-analysis)
 
 ---
 
 ## 📋 Project Overview
 
-CloudTask Pro is a SaaS company that has grown from 0 to 600 customers since 2022. While revenue has grown consistently, the board raised concerns about a persistently high churn rate. This project delivers a full end-to-end analysis covering churn drivers, revenue trends, unit economics, and customer risk scoring — structured as a board-ready deliverable.
+CloudTask Pro is a fictional SaaS company (practice dataset) that has grown from 0 to 600 customers since 2022. While revenue has grown consistently, the board raised concerns about a persistently high churn rate. This project delivers a full end-to-end analysis covering churn drivers, revenue trends, unit economics, and customer risk scoring — structured as a board-ready deliverable.
 
 ---
 
@@ -27,11 +27,12 @@ saas-revenue-churn-analysis/
 │
 ├── notebooks/
 │   ├── tabl_SaaS_Revenue-Churn_Analysis.ipynb   # Full analysis notebook (primary)
+│   ├── portfolio_checks.ipynb                   # Follow-up checks behind the portfolio write-up
 │   └── SaaS_Revenue-Churn_Analysis.ipynb        # Earlier draft
 │
 ├── tableau/
 │   ├── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.twb   # Tableau workbook
-│   └── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.pdf   # Static PDF export
+│   └── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.pdf   # Board pack PDF (same 4 dashboards)
 │
 ├── README.md
 └── requirements.txt
@@ -76,7 +77,7 @@ All plans clear the 3x benchmark. CAC used as blended average ($200.79) — plan
 
 ## 📊 Tableau Dashboards
 
-Four dashboards combined into a Tableau Story:
+Four dashboards combined into a Tableau Story. The [board pack PDF](tableau/CloudTask%20Pro%20-%20Board%20Analysis%20-%20Revenue%2C%20Churn%20%26%20Risk.pdf) shows the same four dashboards, drawn directly from the data so every figure matches the notebooks:
 
 1. **MRR Growth & Churn Trends** — KPI cards, MRR trend + regression overlay, monthly churn rate trend, churn rate by plan
 2. **Customer Segment Risk Analysis** — Churn by region, billing cycle, industry, churn reasons stacked bar by plan
@@ -89,7 +90,6 @@ Four dashboards combined into a Tableau Story:
 
 - **Python** — Pandas, NumPy, Matplotlib, SciPy, Scikit-learn
 - **Tableau Desktop** — Interactive dashboards and Tableau Story
-- **Notion** — Project documentation and findings: [View Doc](https://mahabala.notion.site/SaaS-Revenue-Churn-Analysis-33de583fcafd8009a6d8e67e02d43719)
 
 ---
 
@@ -109,5 +109,10 @@ Four dashboards combined into a Tableau Story:
 - Starter plan is the primary churn risk — 70.51% churn rate vs 52.17% average
 - Annual billing significantly improves retention — worth prioritizing as a conversion lever
 - Cost-related churn (budget cuts + price) accounts for ~33% of all exits
-- 85 active customers (29.6%) show early warning signs based on feature usage alone
-- MRR growth is statistically robust — linear trend explains 97% of revenue movement
+- 85 active customers (29.6%) show early warning signs based on feature usage alone (~$82K of monthly revenue)
+- MRR growth is statistically robust — linear trend explains 97% of revenue movement — but it slowed sharply in 2025 (+12% vs +38% in 2024), so the trend line overstates where revenue is heading
+
+### Follow-up checks (`notebooks/portfolio_checks.ipynb`)
+- **Annual billing lowers churn within each plan**, not just overall: Starter 60% vs 77%, Professional 35% vs 58%, Business 27% vs 53% (Enterprise ~22% either way)
+- **No customer using 60%+ of features churned**, and no customer with an NPS survey score of 7+ churned
+- **Risk score without tenure:** tenure is partly determined by churn itself (churned customers stop accruing it), so it inflates the AUC. Usage and NPS alone still reach **AUC 0.91** (vs 0.94 with tenure)

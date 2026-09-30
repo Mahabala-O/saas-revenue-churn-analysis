@@ -32,7 +32,7 @@ saas-revenue-churn-analysis/
 │
 ├── tableau/
 │   ├── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.twb   # Tableau workbook
-│   └── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.pdf   # Static PDF export
+│   └── CloudTask Pro - Board Analysis - Revenue, Churn & Risk.pdf   # Board pack PDF (same 4 dashboards)
 │
 ├── README.md
 └── requirements.txt
@@ -77,7 +77,7 @@ All plans clear the 3x benchmark. CAC used as blended average ($200.79) — plan
 
 ## 📊 Tableau Dashboards
 
-Four dashboards combined into a Tableau Story:
+Four dashboards combined into a Tableau Story. The [board pack PDF](tableau/CloudTask%20Pro%20-%20Board%20Analysis%20-%20Revenue%2C%20Churn%20%26%20Risk.pdf) shows the same four dashboards, drawn directly from the data so every figure matches the notebooks:
 
 1. **MRR Growth & Churn Trends** — KPI cards, MRR trend + regression overlay, monthly churn rate trend, churn rate by plan
 2. **Customer Segment Risk Analysis** — Churn by region, billing cycle, industry, churn reasons stacked bar by plan
